@@ -24,6 +24,6 @@ sudo apt-get update
 ./init-apps.sh
 ./init-gnome.sh
 
-# post-install interactive setup
-gh auth login
+#post_login_install:#
+./postlogin.sh
 

@@ -6,6 +6,7 @@ cd metasearch2 && \
     cargo b -r && \
     mkdir -p ~/Services/metasearch && \
     mv ./target/release/metasearch2 ~/Services/metasearch/metasearch2 && \
+cp ./metasearch-config.toml ~/Services/metasearch/config.toml
 cd ..
 rm -rf ./metasearch2
 mkdir -p ~/.config/systemd/user

@@ -1,0 +1,18 @@
+bind = "127.0.0.1:28019"
+
+engine_list_separator = false
+
+[engines]
+google = { weight = 1.05, enabled = true }
+bing = { weight = 1.0, enabled = true }
+brave = { weight = 1.25, enabled = true }
+numbat = { weight = 10, enabled = true }
+mdn = { weight = 1.0, enabled = true, max_sections = 1 }
+
+wikipedia = { enabled = false }
+google_scholar = { enabled = false }
+rightdao = { enabled = false }
+stract = { enabled = false }
+yep = { enabled = false }
+marginalia = { enabled = false }
+

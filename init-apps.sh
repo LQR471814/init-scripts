@@ -17,3 +17,6 @@ flatpak install flathub io.freetubeapp.FreeTube -y
 curl -L -o obsidian.AppImage https://github.com/obsidianmd/obsidian-releases/releases/download/v1.5.12/Obsidian-1.5.12.AppImage
 open obsidian.AppImage
 
+# install armcord
+flatpak install flathub xyz.armcord.ArmCord -y
+

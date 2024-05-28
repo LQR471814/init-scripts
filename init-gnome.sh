@@ -3,18 +3,6 @@
 # setup extensions
 flatpak install flathub com.mattjakeman.ExtensionManager -y
 
-# setup wm
-curl -L -o paperwm.zip https://extensions.gnome.org/extension-data/paperwmpaperwm.github.com.v111.shell-extension.zip
-gnome-extensions disable ding@rastersoft.com
-gnome-extensions install paperwm.zip
-touch AT_POSTLOGIN_INSTALL
-read -p "you must logout and log back in and rerun this script to continue the installation. (PRESS ENTER TO CONTINUE)"
-gnome-session-quit
-#post_login_install:#
-rm AT_POSTLOGIN_INSTALL
-gnome-extensions enable paperwm@paperwm.github.com
-gsettings set org.freedesktop.ibus.panel.emoji hotkey "['<Super>semicolon']" # to prevent conflicts
-
 # gnome settings
 gsettings set org.gnome.settings-daemon.plugins.media-keys terminal "['<Shift><Alt>t']"
 gsettings set org.gnome.desktop.wm.keybindings close "['<Super>q']"
@@ -29,4 +17,12 @@ gsettings set org.gtk.Settings.FileChooser clock-format "'12h'"
 gsettings set org.gnome.desktop.peripherals.mouse accel-profile "'flat'"
 gsettings set org.gnome.desktop.peripherals.mouse speed 0.2
 gsettings set org.gnome.settings-daemon.plugins.media-keys home "['<Super>e']"
+
+# setup wm
+curl -L -o paperwm.zip https://extensions.gnome.org/extension-data/paperwmpaperwm.github.com.v111.shell-extension.zip
+gnome-extensions disable ding@rastersoft.com
+gnome-extensions install paperwm.zip
+touch AT_POSTLOGIN_INSTALL
+read -p "you must logout and log back in and rerun this script to continue the installation. (PRESS ENTER TO CONTINUE)"
+gnome-session-quit
 
