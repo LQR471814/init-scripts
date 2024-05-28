@@ -9,6 +9,13 @@ chmod +x install-rust.sh
 ./install-rust.sh -y
 rm install-rust.sh
 
+# setup golang
+sudo apt-get install golang -y
+mkdir -p go/src
+
+# setup go-based tools
+go install github.com/jesseduffield/lazygit@latest
+
 # setup cargo-based tools
 cargo install ripgrep
 
