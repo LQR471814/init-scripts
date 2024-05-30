@@ -18,6 +18,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # init nvm
 nvm install 22
+corepack enable pnpm
 
 # setup go-based tools
 go install github.com/jesseduffield/lazygit@latest
