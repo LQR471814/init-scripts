@@ -17,6 +17,8 @@ fi
 
 sudo apt-get update
 
+mkdir ~/bin
+
 ./init-tools.sh
 ./init-terminal.sh
 ./init-services.sh

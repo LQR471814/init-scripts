@@ -58,3 +58,10 @@ git clone https://github.com/LQR471814/dotconfig.tmux.git ~/.config/tmux
 # setup non-essential tools
 sudo apt-get install gimp xsel cloc -y
 
+# setup ffmpeg
+sudo apt-get install ffmpeg -y
+
+# setup yt-dlp and music-dlp
+curl -o ~/bin/yt-dlp -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp
+chmod a+rx ~/bin/yt-dlp
+

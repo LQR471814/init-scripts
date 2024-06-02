@@ -42,3 +42,6 @@ export PATH="$PATH:/opt/nvim-linux64/bin"
 export VISUAL="nvim" # set nvim as default editor
 export EDITOR="$VISUAL"
 
+# local bin
+export PATH="$PATH:$HOME/bin"
+
