@@ -19,6 +19,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # init nvm
 nvm install 22
 corepack enable pnpm
+pnpm setup
 
 # setup go-based tools
 go install github.com/jesseduffield/lazygit@latest
@@ -64,4 +65,8 @@ sudo apt-get install ffmpeg -y
 # setup yt-dlp and music-dlp
 curl -o ~/bin/yt-dlp -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp
 chmod a+rx ~/bin/yt-dlp
+
+# setup docker
+sudo apt install docker.io docker-doc docker-compose docker-compose-v2 containerd runc
+sudo usermod -aG docker $USER
 

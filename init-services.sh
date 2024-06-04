@@ -24,29 +24,29 @@ WantedBy=default.target" > ~/.config/systemd/user/metasearch.service
 systemctl --user enable metasearch
 systemctl --user start metasearch
 
-# setup google-drive-ocamlfuse
-sudo add-apt-repository ppa:alessandro-strada/ppa -y
-sudo apt-get update
-sudo apt-get install google-drive-ocamlfuse -y
-read -p "please enter OAuth2 client ID from the Google Cloud Console:" client_id
-read -p "please enter OAuth2 client SECRET from the Google Cloud Console:" client_secret
-mkdir -p ~/Services/google-drive
-google-drive-ocamlfuse -id $client_id -secret $client_secret
-chmod +x ~/Services/google-drive/google-drive.sh
+# setup rclone
+sudo -v ; curl https://rclone.org/install.sh | sudo bash
+rclone config
+
+echo "#!/bin/zsh
+rclone sync ~/Documents/sensitive 'gdrive:sensitive/'
+if [ \$? -eq 0 ]; then
+    echo 'success.'
+else
+    rclone authorize drive
+fi" > ~/Services/rsync.sh
+chmod +x ~/Services/rsync.sh
+
 echo "[Unit]
-Description=Google Drive FUSE filesystem
+Description=Sync keepassxc database
 After=network.target
 
 [Service]
-Type=forking
-ExecStart=google-drive-ocamlfuse \"$HOME/Google Drive\"
-ExecStop=fusermount -u \"$HOME/Google Drive\"
-Restart=always
-RemainAfterExit=yes
+Type=simple
+ExecStart=$HOME/Services/rsync.sh
 
 [Install]
-WantedBy=default.target" > ~/.config/systemd/user/google-drive.service
-systemctl --user enable google-drive
-systemctl --user start google-drive
-mkdir ~/Google\ Drive
+WantedBy=default.target" > ~/.config/systemd/user/rsync-gdrive.service
+systemctl --user enable rsync-gdrive
+systemctl --user start rsync-gdrive
 
