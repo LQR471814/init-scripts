@@ -12,7 +12,7 @@ ensure_success() {
     if [ \$? -eq 0 ]; then
         echo 'success.'
     else
-        rclone authorize drive
+        rclone config reconnect gdrive:
     fi
 }
 

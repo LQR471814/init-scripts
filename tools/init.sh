@@ -36,3 +36,6 @@
 # setup docker
 ./docker.sh
 
+# setup turso
+./turso.sh
+
