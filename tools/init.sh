@@ -18,6 +18,12 @@
 # setup nodejs
 ./nodejs.sh
 
+# setup rye
+./rye.sh
+
+# setup rye-based tools
+./rye-based.sh
+
 # setup gh-cli
 ./gh-cli.sh
 
