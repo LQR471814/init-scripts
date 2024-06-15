@@ -7,6 +7,6 @@ YTMDL_LOCATION=$(python3 -m pip show ytmdl | grep -Eo 'Location:\s*(.*)' | awk '
 PYTHON_LOCATION=$(which python3)
 
 echo "#!/bin/bash
-python3 '$YTMDL_LOCATION/ytmdl/main.py'" > ~/bin/ytmdl
+python3 '$YTMDL_LOCATION/ytmdl/main.py' \$@" > ~/bin/ytmdl
 chmod +x ~/bin/ytmdl
 
