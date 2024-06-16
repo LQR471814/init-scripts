@@ -60,6 +60,9 @@ prompt pure
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
+# workaround: https://github.com/softmoth/zsh-vim-mode/issues/42
+MODE_INDICATOR=
+
 source "$HOME/.zsh/vim-mode/zsh-vim-mode.plugin.zsh"
 source "$HOME/.zsh/clipboard/zsh-system-clipboard.plugin.zsh"
 
