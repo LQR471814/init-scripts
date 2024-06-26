@@ -21,3 +21,6 @@
 # install miru
 ./miru.sh
 
+# install ezytdl
+./ezytdl.sh
+
