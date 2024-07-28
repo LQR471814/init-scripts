@@ -60,6 +60,14 @@ prompt pure
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
+# remove weird delay when pressing escape
+bindkey -M vicmd '^[' undefined-key
+bindkey -rM viins '^X'
+bindkey -M viins '^X,' _history-complete-newer \
+                 '^X/' _history-complete-older \
+                 '^X`' _bash_complete-word
+KEYTIMEOUT=1
+
 # workaround: https://github.com/softmoth/zsh-vim-mode/issues/42
 MODE_INDICATOR=
 
