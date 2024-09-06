@@ -34,6 +34,9 @@ yarn() {
     load-nvm
     yarn "$@"
 }
+lzg() {
+    lazygit
+}
 
 # nvim
 export PATH="$PATH:/opt/nvim-linux64/bin"
