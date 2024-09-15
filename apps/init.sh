@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# setup AppImageLauncher
-./appimagelauncher.sh
+# setup gear lever
+./gearlever.sh
 
 # install keepassxc
 ./keepassxc.sh
