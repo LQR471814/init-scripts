@@ -12,9 +12,6 @@
 # setup go-based tools
 ./golang-based.sh
 
-# setup rust-based tools
-./rust-based.sh
-
 # setup nodejs
 ./nodejs.sh
 

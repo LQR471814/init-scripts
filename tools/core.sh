@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo apt-get install git curl clang cmake make pkg-config -y
+sudo apt-get install git curl clang cmake make pkg-config ripgrep fd-find -y
