@@ -1,5 +1,8 @@
 #!/bin/bash
 
 # setup ytmdl
-rye tool install ytmdl
+rye install ytmdl
+
+rye install pipx
+pipx install khal vdirsyncer yewtube 
 
