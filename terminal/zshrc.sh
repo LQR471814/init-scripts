@@ -4,40 +4,6 @@
 # go
 export PATH="$PATH:$HOME/go/bin"
 
-# nvm
-load-nvm() {
-    export NVM_DIR=~/.nvm
-    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
-}
-nvm() {
-    unset -f nvm
-    load-nvm
-    nvm "$@"
-}
-node() {
-    unset -f node
-    load-nvm
-    node "$@"
-}
-npm() {
-    unset -f npm
-    load-nvm
-    npm "$@"
-}
-pnpm() {
-    unset -f pnpm
-    load-nvm
-    pnpm "$@"
-}
-yarn() {
-    unset -f yarn
-    load-nvm
-    yarn "$@"
-}
-lzg() {
-    lazygit
-}
-
 # nvim
 export PATH="$PATH:/opt/nvim-linux64/bin"
 export VISUAL="nvim" # set nvim as default editor
@@ -76,4 +42,10 @@ MODE_INDICATOR=
 
 source "$HOME/.zsh/vim-mode/zsh-vim-mode.plugin.zsh"
 source "$HOME/.zsh/clipboard/zsh-system-clipboard.plugin.zsh"
+
+# n (nodejs version manager)
+export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+
+# doom emacs CLI
+export PATH="$PATH:$HOME/.config/emacs/bin"
 

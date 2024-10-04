@@ -1,8 +1,4 @@
 #!/bin/bash
 
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # init nvm
-nvm install 22
-corepack enable pnpm
-pnpm setup
+curl -L https://bit.ly/n-install | bash
+
