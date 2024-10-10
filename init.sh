@@ -13,6 +13,7 @@ else
     cd apps && ./init.sh && cd ..
     cd gnome && ./init.sh && cd ..
     cd emacs && ./init.sh && cd ..
+    cd dwm && ./init.sh && cd ..
     cd mail && ./init.sh && cd ..
 fi
 
