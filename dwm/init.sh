@@ -1,4 +1,4 @@
-sudo apt-get install xorg libx11-dev libxft-dev libxinerama-dev xdm suckless-tools dmenu
+sudo apt-get install xorg libx11-dev libxft-dev libxinerama-dev xdm suckless-tools dmenu dwm -y
 
 git clone https://github.com/LQR471814/dotconfig.dwm-bar.git ~/.config/dwm-bar
 
