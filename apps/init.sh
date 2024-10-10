@@ -5,7 +5,13 @@ flatpak install flathub it.mijorus.gearlever -y
 flatpak install flathub io.freetubeapp.FreeTube -y
 flatpak install flathub xyz.armcord.ArmCord -y
 flatpak install flathub io.dbeaver.DBeaverCommunity -y
+
+# install zen browser
 flatpak install flathub io.github.zen_browser.zen -y
+
+sudo update-alternatives --install /usr/bin/gnome-www-browser gnome-www-browser /var/lib/flatpak/exports/bin/io.github.zen_browser.zen 2000
+sudo update-alternatives --install /usr/bin/www-browser www-browser /var/lib/flatpak/exports/bin/io.github.zen_browser.zen 2000
+sudo update-alternatives --install /usr/bin/x-www-browser x-www-browser /var/lib/flatpak/exports/bin/io.github.zen_browser.zen 2000
 
 # install keepassxc
 curl -L -o keepassxc.AppImage https://github.com/keepassxreboot/keepassxc/releases/download/2.7.8/KeePassXC-2.7.8-x86_64.AppImage
