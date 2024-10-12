@@ -13,3 +13,5 @@ gsettings set org.gtk.Settings.FileChooser clock-format "'12h'"
 gsettings set org.gnome.desktop.peripherals.mouse accel-profile "'flat'"
 gsettings set org.gnome.desktop.peripherals.mouse speed 0.2
 gsettings set org.gnome.settings-daemon.plugins.media-keys home "['<Super>e']"
+gsettings set org.freedesktop.ibus.panel.emoji hotkey "['<Super>semicolon']" # to prevent conflicts
+

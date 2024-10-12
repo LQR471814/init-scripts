@@ -1,10 +1,8 @@
-#!/bin/bash
-
 sudo -v ; curl https://rclone.org/install.sh | sudo bash
 echo "make sure you name the google drive integration 'gdrive'"
 rclone config
 
-mkdir ~/Documents/sensitive
+mkdir ~/gdrive-shared
 
 echo "#!/bin/zsh
 
@@ -17,10 +15,10 @@ ensure_success() {
 }
 
 if [ \$1 = 'pull' ]; then
-    rclone sync 'gdrive:sensitive/' ~/Documents/sensitive
+    rclone sync 'gdrive:shared/' ~/gdrive-shared
     ensure_success
 elif [ \$1 = 'push' ]; then
-    rclone sync ~/Documents/sensitive 'gdrive:sensitive/'
+    rclone sync ~/gdrive-shared 'gdrive:shared/'
     ensure_success
 else
     echo \"invalid arguments, you should do 'gdrive push' or 'gdrive pull'\"
@@ -28,5 +26,4 @@ else
 fi" > ~/bin/gdrive
 chmod +x ~/bin/gdrive
 
-echo "you can now push or pull the keepassxc database with 'gdrive push' or 'gdrive pull'"
-
+echo "you can now push or pull files inside ~/gdrive-shared with 'gdrive push' or 'gdrive pull'"
