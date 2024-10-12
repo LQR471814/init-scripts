@@ -18,3 +18,5 @@ start_dwm_bar() {
 start_dwm_bar &
 " >> ~/.profile
 
+sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
+
