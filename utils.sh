@@ -61,14 +61,16 @@ create_daemon() {
     mkdir -p $service_path
 
     local computed_exec_start=$exec_start
-    if [[ $exec_start != /* ]] then
-        computed_exec_start=$(realpath "$service_path/$exec_start")
-    fi
+    case $exec_start in
+        "/*" )
+            computed_exec_start=$(realpath "$service_path/$exec_start") ;;
+    esac
 
     local computed_wd=$wd
-    if [[ $wd != /* ]] then
-        computed_wd=$(realpath "$service_path/$wd")
-    fi
+    case $wd in
+        "/*" )
+            computed_wd=$(realpath "$service_path/$wd") ;;
+    esac
 
     echo "[Unit]
 Description=$description
