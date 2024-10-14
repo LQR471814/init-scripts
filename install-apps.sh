@@ -16,10 +16,14 @@ flatpak_install it.mijorus.gearlever             gearlever
 flatpak_install io.freetubeapp.FreeTube          freetube
 flatpak_install xyz.armcord.ArmCord              armcord
 flatpak_install io.dbeaver.DBeaverCommunity      dbeaver
-flatpak_install io.github.zen_browser.zen        zen
 flatpak_install com.mattjakeman.ExtensionManager extension_manager
 
-set_default_browser /usr/bin/zen
+# flatpak_install io.github.zen_browser.zen zen
+# set_default_browser /usr/bin/zen
+
+curl -L -o thorium.deb https://github.com/Alex313031/thorium/releases/download/M126.0.6478.251/thorium-browser_TH24_126.0.6478.251_SSE4.deb
+sudo dpkg -i thorium.deb
+rm thorium.deb
 
 appimage_install "https://github.com/keepassxreboot/keepassxc/releases/download/2.7.8/KeePassXC-2.7.8-x86_64.AppImage" keepassxc
 appimage_install "https://github.com/musescore/MuseScore/releases/download/v4.4.2/MuseScore-Studio-4.4.2.242570931-x86_64.AppImage" musescore
