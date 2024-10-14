@@ -9,6 +9,7 @@ git clone https://github.com/LQR471814/dotconfig.picom ~/.config/picom
 mkdir -p ~/.dwm
 echo "/home/lqr471814/.config/dwm-bar/dwm_bar.sh &
 picom --config /home/lqr471814/.config/picom/picom.conf &" > ~/.dwm/autostart.sh
+chmod +x ~/.dwm/autostart.sh
 
 sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
 
