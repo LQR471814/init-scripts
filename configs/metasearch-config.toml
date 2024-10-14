@@ -1,6 +1,16 @@
-bind = "127.0.0.1:28019"
+# See src/config.rs for all of the possible options.
+# The commented-out lines are examples of values you could set, not the defaults.
 
-engine_list_separator = false
+bind = "0.0.0.0:28019"
+api = false
+
+[ui]
+engine_list_separator = true
+show_version_info = true
+stylesheet_url = "/themes/catppuccin-mocha.css"
+
+[image_search]
+enabled = true
 
 [engines]
 google = { weight = 1.05, enabled = true }
@@ -15,4 +25,16 @@ rightdao = { enabled = false }
 stract = { enabled = false }
 yep = { enabled = false }
 marginalia = { enabled = false }
+# fend = true
 
+[urls.replace]
+"www.reddit.com" = "old.reddit.com"
+"medium.com" = "scribe.rip"
+".medium.com" = "scribe.rip"
+
+[urls.weight]
+# These are checked after applying replacements. Setting the weight to 0 (or any
+# negative number) completely hides the result. Longer matches have a higher
+# priority.
+"quora.com" = 0.1
+".quora.com" = 0.1
