@@ -1,4 +1,4 @@
-sudo apt-get install xorg libx11-dev libxft-dev libxinerama-dev xdm suckless-tools dmenu dwm picom playerctl pavucontrol pulseaudio-utils -y
+sudo apt-get install xorg libx11-dev libxft-dev libxinerama-dev xdm suckless-tools dmenu dwm picom playerctl pavucontrol pulseaudio-utils flameshot -y
 
 # see https://bbs.archlinux.org/viewtopic.php?pid=2100854#p2100854
 sudo apt remove xdg-desktop-portal-gnome -y
