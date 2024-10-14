@@ -6,19 +6,10 @@ sudo apt remove xdg-desktop-portal-gnome -y
 git clone https://github.com/LQR471814/dotconfig.dwm-bar.git ~/.config/dwm-bar
 git clone https://github.com/LQR471814/dotconfig.picom ~/.config/picom
 
-echo "
-start_dwm_bar() {
-	sleep 1s
-	pidof dwm
-	if [ \$? -eq 0 ]; then
-	    /home/lqr471814/.config/dwm-bar/dwm_bar.sh &
-	    picom --config /home/lqr471814/.config/picom/picom.conf &
-	fi
-}
-start_dwm_bar &
-" >> ~/.profile
+mkdir -p ~/.dwm
+echo "/home/lqr471814/.config/dwm-bar/dwm_bar.sh &
+picom --config /home/lqr471814/.config/picom/picom.conf &" > ~/.dwm/autostart.sh
 
-# make appimages work
 sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
 
 # fix dark mode
