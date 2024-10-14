@@ -18,5 +18,11 @@ start_dwm_bar() {
 start_dwm_bar &
 " >> ~/.profile
 
+# make appimages work
 sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
+
+# fix dark mode
+sudo apt install lxappearance -y
+echo "switch the theme to Yaru-blue"
+lxappearance
 
