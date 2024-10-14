@@ -1,8 +1,7 @@
 . "./utils.sh"
 
 # alacritty
-sudo apt-get install pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev -y
-sudo apt install alacritty
+sudo apt install alacritty pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev -y
 git clone https://github.com/LQR471814/dotconfig.alacritty.git ~/.config/alacritty
 set_default_terminal /usr/bin/alacritty
 
