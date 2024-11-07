@@ -21,6 +21,24 @@ set_default_terminal() {
     sudo update-alternatives --config x-terminal-emulator
 }
 
+# (mimetype: string, path: string)
+set_default_mime_handler() {
+    local mimetype="$1"
+    local path="$2"
+
+    local desktop_filename="$(basename "$path").desktop"
+    local desktop_target="$HOME/.local/share/applications/$desktop_filename"
+    mkdir -p ~/.local/share/applications
+    echo "[Desktop Entry]
+Version=1.0
+Name=$(basename "$path")
+Exec=$desktop_filename
+Type=Application
+Terminal=false" > "$desktop_target"
+    chmod +x "$desktop_target"
+    xdg-mime default "$desktop_filename" "$mimetype"
+}
+
 # (full_domain: string, name: string)
 flatpak_install() {
     local full_domain=$1
