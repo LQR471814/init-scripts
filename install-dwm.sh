@@ -11,6 +11,9 @@ echo "/home/lqr471814/.config/dwm-bar/dwm_bar.sh &
 picom --config /home/lqr471814/.config/picom/picom.conf &" > ~/.dwm/autostart.sh
 chmod +x ~/.dwm/autostart.sh
 
+# change to 24h time
+gsettings set org.gnome.desktop.interface clock-format '24h'
+
 sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
 
 # fix dark mode
