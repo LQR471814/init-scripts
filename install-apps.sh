@@ -33,3 +33,14 @@ appimage_install "https://objects.githubusercontent.com/github-production-releas
 sudo apt install -y libvips
 appimage_install "https://github.com/sylviiu/ezytdl/releases/download/2.4.2/ezytdl-linux.AppImage" ezytdl
 
+# yazi
+curl -L -o yazi.zip https://github.com/sxyazi/yazi/releases/download/v0.3.3/yazi-x86_64-unknown-linux-gnu.zip
+unzip yazi.zip
+mv yazi-x86_64-unknown-linux-gnu ~/bin/yazi
+ln -s ~/bin/ya ~/bin/yazi/yazi
+
+echo 'deb http://download.opensuse.org/repositories/home:/justkidding/xUbuntu_24.04/ /' | sudo tee /etc/apt/sources.list.d/home:justkidding.list
+curl -fsSL https://download.opensuse.org/repositories/home:justkidding/xUbuntu_24.04/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_justkidding.gpg > /dev/null
+sudo apt update
+sudo apt install ueberzugpp
+
