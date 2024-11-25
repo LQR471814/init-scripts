@@ -8,7 +8,9 @@ git clone https://github.com/LQR471814/dotconfig.picom ~/.config/picom
 
 mkdir -p ~/.dwm
 echo "/home/lqr471814/.config/dwm-bar/dwm_bar.sh &
-picom --config /home/lqr471814/.config/picom/picom.conf &" > ~/.dwm/autostart.sh
+picom --config /home/lqr471814/.config/picom/picom.conf &
+/home/lqr471814/bin/activitywatch/aw-qt --no-gui 2> ~/activitywatch.log &
+/usr/bin/syncthing serve --no-browser --logfile=default &" > ~/.dwm/autostart.sh
 chmod +x ~/.dwm/autostart.sh
 
 # change to 24h time
